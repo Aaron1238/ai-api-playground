@@ -1,0 +1,107 @@
+/* Custom styles for the AI API Playground */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Chat message animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Streaming cursor animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.streaming-cursor {
+  animation: blink 1s infinite;
+}
+
+/* Provider badge colors */
+.provider-qwen { background-color: #3b82f6; }
+.provider-moonshot { background-color: #8b5cf6; }
+.provider-openai { background-color: #10b981; }
+.provider-google { background-color: #ef4444; }
+.provider-zai { background-color: #ec4899; }
+.provider-deepseek { background-color: #f97316; }
+.provider-xai { background-color: #6366f1; }
+.provider-nvidia { background-color: #22c55e; }
+.provider-bytedance { background-color: #14b8a6; }
+
+/* Model selector hover effect */
+.model-item:hover {
+  background-color: hsl(var(--accent));
+}
+
+/* API key input styling */
+.api-key-input {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .chat-container {
+    height: 500px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .chat-container {
+    height: 400px !important;
+  }
+}
+
+/* Focus states */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Dark mode transitions */
+@media (prefers-color-scheme: dark) {
+  * {
+    transition-property: background-color, border-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+  }
+}
